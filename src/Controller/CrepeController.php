@@ -35,20 +35,20 @@ class CrepeController extends AbstractController
 
         $crepe3 = [
             "id" => 3,
-            "name" => "mariette",
-            "type" => "sucre",
-            "price" => 8,
-            "description" => "La spécialité de Bourg-en-Bourg",
-            "createdAt" => "09/07/2020"
+            "name" => "franx",
+            "type" => "sale",
+            "price" => 5,
+            "description" => "La spécialité de Cilus",
+            "createdAt" => "12/03/2017"
         ];
 
         $crepe4 = [
             "id" => 4,
-            "name" => "mariette",
+            "name" => "france",
             "type" => "sucre",
-            "price" => 8,
-            "description" => "La spécialité de Bourg-en-Bourg",
-            "createdAt" => "09/07/2020"
+            "price" => 6,
+            "description" => "La spécialité de fransium",
+            "createdAt" => "12/09/2010"
         ];
 
         $crepes = [
