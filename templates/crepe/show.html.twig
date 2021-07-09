@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ uneCrepe.name }}{% endblock %}
+
+{% block body %}
+    <h1>Ma Crêpe : {{ uneCrepe.name | capitalize }}</h1>
+                    {% if uneCrepe.type == "sale" %}
+                        <p>La crêpe est salée</p>
+                    {% elseif uneCrepe.type == "sucre" %}
+                        <p>La crêpe est sucrée</p>
+                    {% endif %}
+                    <p >Son prix {{ uneCrepe.price }} €</p>
+                    <p >{{ uneCrepe.description }}</p>
+                    <small> Crée le {{ uneCrepe.createdAt }}</small><br>
+    <br>
+    <a href="{{ path('crepeIndex') }}" class="btn btn-primary">Retour a toute les crêpes</a>
+{% endblock %}

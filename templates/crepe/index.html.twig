@@ -9,7 +9,7 @@
     {% for uneCrepe in tabCrepes%}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <u><h5 class="card-title" style="text-transform: capitalize;">{{ uneCrepe.name }}</h5></u>
+                <u><h5 class="card-title">{{ uneCrepe.name | capitalize}}</h5></u>
                 {% if uneCrepe.type == "sale" %}
                 <p class="card-text">La crêpe est salée</p>
                 {% elseif uneCrepe.type == "sucre" %}
@@ -19,7 +19,8 @@
                 <p class="card-text">{{ uneCrepe.description }}</p>
                 <small class="card-text"> Crée le {{ uneCrepe.createdAt }}</small><br>
                 <br>
-                <a href="#" class="btn btn-primary">Voir plus</a>
+                {% set crepeId = uneCrepe.id %}
+                <a href="{{ path('crepeShow', { crepeId }) }}" class="btn btn-primary">Voir plus</a>
             </div>
         </div>
     {% endfor %}
