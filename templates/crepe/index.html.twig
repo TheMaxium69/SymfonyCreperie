@@ -19,8 +19,8 @@
                 <p class="card-text">{{ uneCrepe.description }}</p>
                 <small class="card-text"> Crée le {{ uneCrepe.createdAt }}</small><br>
                 <br>
-                {% set crepeId = uneCrepe.id %}
-                <a href="{{ path('crepeShow', { crepeId }) }}" class="btn btn-primary">Voir plus</a>
+                {% set crepeName = uneCrepe.name %}
+                <a href="{{ path('crepeShow', { crepeName }) }}" class="btn btn-primary">Voir plus</a>
             </div>
         </div>
     {% endfor %}

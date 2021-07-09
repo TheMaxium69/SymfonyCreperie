@@ -65,9 +65,9 @@ class CrepeController extends AbstractController
     }
 
     /**
-     * @Route("/crepe/{crepeId}", name="crepeShow")
+     * @Route("/crepe/{crepeName}", name="crepeShow")
      */
-    public function show(int $crepeId): Response
+    public function show(string $crepeName): Response
     {
 
 
@@ -108,14 +108,14 @@ class CrepeController extends AbstractController
         ];
 
         $crepes = [
-            $crepe1['id'] => $crepe1,
-            $crepe2['id'] => $crepe2,
-            $crepe3['id'] => $crepe3,
-            $crepe4['id'] =>$crepe4,
+            $crepe1['name'] => $crepe1,
+            $crepe2['name'] => $crepe2,
+            $crepe3['name'] => $crepe3,
+            $crepe4['name'] =>$crepe4,
         ];
 
         return $this->render('crepe/show.html.twig', [
-            'uneCrepe' => $crepes[$crepeId],
+            'uneCrepe' => $crepes[$crepeName],
         ]);
     }
 
