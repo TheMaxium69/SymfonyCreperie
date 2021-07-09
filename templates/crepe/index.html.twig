@@ -8,6 +8,7 @@
 <div class="row">
     {% for uneCrepe in tabCrepes%}
         <div class="card" style="width: 18rem;">
+            <img src="{{ uneCrepe.image }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <u><h5 class="card-title">{{ uneCrepe.name | capitalize}}</h5></u>
                 {% if uneCrepe.type == "sale" %}
@@ -17,10 +18,9 @@
                 {% endif %}
                 <p class="card-text">Son prix {{ uneCrepe.price }} €</p>
                 <p class="card-text">{{ uneCrepe.description }}</p>
-                <small class="card-text"> Crée le {{ uneCrepe.createdAt }}</small><br>
+                <small class="card-text"> Crée le ...</small><br>
                 <br>
-                {% set crepeName = uneCrepe.name %}
-                <a href="{{ path('crepeShow', { crepeName }) }}" class="btn btn-primary">Voir plus</a>
+                <a href="{{ path('crepeShow', {name : uneCrepe.name }) }}" class="btn btn-primary">Voir plus</a>
             </div>
         </div>
     {% endfor %}
