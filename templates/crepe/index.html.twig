@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+    <h1>Mon Controlleur : {{ controller_name }}</h1>
+
+<div class="row">
+    {% for uneCrepe in tabCrepes%}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <u><h5 class="card-title" style="text-transform: capitalize;">{{ uneCrepe.name }}</h5></u>
+                {% if uneCrepe.type == "sale" %}
+                <p class="card-text">La crêpe est salée</p>
+                {% elseif uneCrepe.type == "sucre" %}
+                <p class="card-text">La crêpe est sucrée</p>
+                {% endif %}
+                <p class="card-text">Son prix {{ uneCrepe.price }} €</p>
+                <p class="card-text">{{ uneCrepe.description }}</p>
+                <small class="card-text"> Crée le {{ uneCrepe.createdAt }}</small><br>
+                <br>
+                <a href="#" class="btn btn-primary">Voir plus</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
